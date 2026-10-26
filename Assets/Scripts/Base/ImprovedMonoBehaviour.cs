@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Caches transform. Provides position, rotation and scale interfaces via the cached transform.
+/// </summary>
 public abstract class ImprovedMonoBehaviour : MonoBehaviour
 {
     Transform tr;

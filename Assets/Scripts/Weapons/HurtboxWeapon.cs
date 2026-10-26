@@ -26,7 +26,7 @@ namespace Weapons
         /// <param name="hit"></param>
         protected virtual void EvaluateCandidate(Transform hit)
         {
-            //Debug.Log("Evaluating " + hit);
+            Debug.Log("Evaluating " + hit);
             var root = hit.root;
             var id = root.GetEntityId();
             if (id == Transform.root.GetEntityId()) return;

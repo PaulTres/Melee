@@ -9,10 +9,12 @@ namespace Animation
         [SerializeField] protected bool canInterruptSelf;
         public bool CanInterruptSelf => canInterruptSelf;
         public event Action OnEnter = delegate { }, OnExit = delegate { };
+        [SerializeField] protected bool active;
 
         public virtual void EnterState()
         {
             OnEnter?.Invoke();
+            active = true;
         }
 
         public abstract void UpdateState(float deltaTime);
@@ -20,6 +22,7 @@ namespace Animation
         public virtual void ExitState()
         {
             OnExit?.Invoke();
+            active = false;
         }
     }
 }

@@ -3,7 +3,7 @@ using Utilities;
 
 namespace Animation
 {
-    public abstract class StateMachine<T> : ImprovedMonoBehaviour where T : State
+    public abstract class StateMachine<T> : ImprovedMonoBehaviour, IResettable where T : State
     {
         protected T currentState;
         [SerializeField] protected T defaultState;
@@ -12,7 +12,12 @@ namespace Animation
         protected virtual void OnEnable()
         {
             GlobalUpdater.RegisterUpdate(PerformUpdate);
-            if (defaultState != null) ForceChangeState(defaultState);
+            PerformReset();
+        }
+
+        public virtual void PerformReset()
+        {
+            ForceChangeState(defaultState);
         }
 
         protected virtual void OnDisable()
@@ -21,7 +26,11 @@ namespace Animation
         }
         #endregion
 
-        public virtual void ChangeToDefault() => ChangeState(defaultState);
+        public virtual void ChangeToDefault(bool force = true)
+        {
+            if (force) ForceChangeState(defaultState);
+            else ChangeState(defaultState);
+        }
 
         protected virtual void PerformUpdate(float dt)
         {

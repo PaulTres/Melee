@@ -5,10 +5,23 @@ using EventBus;
 using HybridBT2;
 using System.Collections.Generic;
 using UnityEngine;
+using Weapons;
 namespace Utilities
 {
     public static class Extensions
     {
+        #region Animator
+        public static void EnterDamageState(this Animator animator)
+        {
+            EventBus<MeleeWeapon.EnterDamageState>.Raise(animator.transform.GetEntityId(), new());
+        }
+
+        public static void ExitDamageState(this Animator animator)
+        {
+            EventBus<MeleeWeapon.ExitDamageState>.Raise(animator.transform.GetEntityId(), new());
+        }
+        #endregion
+
         public static bool CanChangeState(this IState state, IState newState)
         {
             if (state == newState) return state.CanInterruptSelf;

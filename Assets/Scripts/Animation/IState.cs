@@ -1,5 +1,6 @@
 namespace Animation
 {
+
     public interface IState
     {
         int Priority { get; }

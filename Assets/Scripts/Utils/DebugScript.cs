@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class DebugScript : MonoBehaviour
 {
     [SerializeField] protected string text = "message";
