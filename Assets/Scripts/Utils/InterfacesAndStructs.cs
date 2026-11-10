@@ -10,6 +10,26 @@ public interface IResettable
 
 #region Event bus stuff
 /// <summary>
+/// Used to drain stamina from the stamina component.
+/// </summary>
+public class StaminaDrainEvent : IEvent
+{
+    public readonly BlockResult BlockResult;
+    public readonly DamageInfo DamageInfo;
+
+    public StaminaDrainEvent(BlockResult blockResult, DamageInfo damageInfo)
+    {
+        BlockResult = blockResult;
+        DamageInfo = damageInfo;
+    }
+}
+
+/// <summary>
+/// Fires when an entity gains a riposte window.
+/// </summary>
+public class RiposteEvent : IEvent { }
+
+/// <summary>
 /// Fires when an entity's attack should be interrupted due to damage.
 /// </summary>
 public class AttackInterruptEvent : IEvent { }
@@ -21,6 +41,7 @@ public struct DamageInfo : IEvent
 {
     public AttackType AttackType { get; set; }
     public float Amount { get; set; }
+    public float StaminaDrain { get; set; }
     public Transform Source { get; set; }
     public Vector3 Position { get; set; }
 }

@@ -66,10 +66,10 @@ namespace Animation
         private void Update()
         {
             Readjust();
-            if (grounded && Time.time - lastMoveTime > resetTime && opposite.grounded && Time.time - opposite.lastMoveTime > resetTime)
-            {
-                ResetNewPosition();
-            }
+            //if (grounded && Time.time - lastMoveTime > resetTime && opposite.grounded && Time.time - opposite.lastMoveTime > resetTime)
+            //{
+            //    ResetNewPosition();
+            //}
             if (lerp < 1 && opposite.Grounded)
             {
                 Grounded = false;

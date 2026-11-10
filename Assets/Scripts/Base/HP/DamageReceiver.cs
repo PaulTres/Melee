@@ -2,15 +2,29 @@ using EventBus;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
+using Weapons;
 
 namespace HP
 {
-    public class DamageReceiver : MonoBehaviour
+    public class DamageReceiver : ImprovedMonoBehaviour
     {
         [SerializeField] protected List<HPComponent> hpComponents = new();
         [Tooltip("This transform is used to determine the direction of incoming damage. If not set, the transform of this component will be used.")]
         [SerializeField] protected Transform body;
         [SerializeField] protected TargetType targetType;
+
+        protected BlockComponent[] blockComponents;
+        public BlockComponent[] BlockComponents
+        {
+            get
+            {
+                if (blockComponents.IsEmpty())
+                {
+                    blockComponents = Transform.root.GetComponentsInChildren<BlockComponent>(true);
+                }
+                return blockComponents;
+            }
+        }
 
         protected void Awake()
         {
@@ -53,7 +67,21 @@ namespace HP
 
         protected void ReceiveDamage(DamageInfo damageInfo)
         {
+            foreach (var block in blockComponents)
+            {
+                if (block == null || !block.Blocking) continue;
+                var result = block.TryBlock(damageInfo);
+                if (result == BlockResult.Failure) continue;
+                if (result == BlockResult.Perfect)
+                {
+                    //gain a riposte
+                    EventBus<RiposteEvent>.Raise(Transform.GetEntityId());
+                }
+                //apply stamina damage?
+                return;
+            }
             damageInfo.Amount = CalculateDamage(damageInfo);
+            if (damageInfo.Amount <= 0) return;
             for (int i = 0; i < hpComponents.Count; i++)
             {
                 hpComponents[i].TakeDamage(damageInfo);

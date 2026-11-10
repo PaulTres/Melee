@@ -76,7 +76,7 @@ namespace HP
             if (invulnerable) return;
             if (debug) Debug.Log($"{this} took {damageInfo.Amount} damage from {damageInfo.Source}.");
             CurrentHP -= damageInfo.Amount;
-            if (causeInterruptsOnDamage) EventBus<AttackInterruptEvent>.Raise(Transform.root.GetEntityId(), null);
+            if (causeInterruptsOnDamage) EventBus<AttackInterruptEvent>.Raise(Transform.root.GetEntityId());
             if (CurrentHP <= 0 && !firedEvent)
             {
                 firedEvent = true;

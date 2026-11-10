@@ -46,6 +46,22 @@ namespace EventBus
         }
 
         /// <summary>
+        /// Raise a binding with the default argument.
+        /// </summary>
+        /// <param name="bindingId">The id of the binding.</param>
+        /// <returns>True if the binding was found and raised.</returns>
+        public static bool Raise(int bindingId)
+        {
+            if (bindings.TryGetValue(bindingId, out EventBinding<T> binding))
+            {
+                binding.Invoke(default);
+                return true;
+            }
+            Debug.LogWarning($"No binding found for id {bindingId}.");
+            return false;
+        }
+
+        /// <summary>
         /// Add a new binding.
         /// </summary>
         /// <param name="id">The id of the new binding. Defaults to 0.</param>

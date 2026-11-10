@@ -94,7 +94,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Escape"",
-                    ""Type"": ""Button"",
+                    ""type"": ""Button"",
                     ""id"": ""4581e0a3-46d8-4b63-8ee5-3060a10e69a8"",
                     ""expectedControlType"": """",
                     ""processors"": """",
@@ -122,7 +122,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Move"",
-                    ""Type"": ""Value"",
+                    ""type"": ""Value"",
                     ""id"": ""ecf3ce36-03f4-4713-b317-114a6f270242"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",

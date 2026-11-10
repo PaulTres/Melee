@@ -25,7 +25,7 @@ namespace Player
         protected override void OnEnable()
         {
             base.OnEnable();
-            if (sendEvent) EventBus<PauseEvent>.Raise(new(true));
+            if (sendEvent) EventBus<PauseEvent>.Raise(new PauseEvent(true));
             if (stopTime) Time.timeScale = 0;
             pauseMenuText.text = "Difficulty: " + GlobalConfig.DifficultyText(GameManager.Difficulty);
         }
@@ -33,7 +33,7 @@ namespace Player
         protected override void OnDisable()
         {
             base.OnDisable();
-            if (sendEvent) EventBus<PauseEvent>.Raise(new(false));
+            if (sendEvent) EventBus<PauseEvent>.Raise(new PauseEvent(false));
             Time.timeScale = 1;
         }
 
