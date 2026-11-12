@@ -7,7 +7,7 @@ namespace Animation.Tweening
     public class TweenStateMachine : ImprovedMonoBehaviour, ITweenStateMachine
     {
         [field: SerializeField] public TweenState DefaultState { get; protected set; }
-        public TweenState CurrentState { get; protected set; }
+        [field: SerializeField] public TweenState CurrentState { get; protected set; }
         protected Sequence sequence;
 
         protected virtual void OnEnable()
@@ -17,13 +17,18 @@ namespace Animation.Tweening
 
         public void PerformReset()
         {
-            ForceChangeState(DefaultState);
+            ChangeState(DefaultState, true);
         }
 
+        /// <summary>
+        /// Sets current sequence to the provided sequence and unpauses it. If there is an active sequence, it will be killed first.
+        /// </summary>
+        /// <param name="sequence"></param>
         public void SetSequence(Sequence sequence)
         {
+            KillActiveSequence();
             this.sequence = sequence;
-            this.sequence.isPaused = false;
+            if (this.sequence.isAlive) this.sequence.isPaused = false;
         }
 
         public void KillActiveSequence()
@@ -34,16 +39,10 @@ namespace Animation.Tweening
             }
         }
 
-        public virtual void ChangeToDefault(bool force = true)
-        {
-            if (force) ForceChangeState(DefaultState);
-            else ChangeState(DefaultState);
-        }
-
-        public bool ChangeState(TweenState newState)
+        public bool ChangeState(TweenState newState, bool force = false)
         {
             if (newState == null) return false;
-            if (CurrentState == null || CurrentState.CanChangeState(newState))
+            if (force || CurrentState == null || CurrentState.CanChangeState(newState))
             {
                 if (CurrentState != null) CurrentState.ExitState();
                 CurrentState = newState;
@@ -51,14 +50,6 @@ namespace Animation.Tweening
                 return true;
             }
             return false;
-        }
-
-        public void ForceChangeState(TweenState newState)
-        {
-            if (newState == null) return;
-            if (CurrentState != null) CurrentState.ExitState();
-            CurrentState = newState;
-            CurrentState.EnterState();
         }
     }
 }

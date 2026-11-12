@@ -12,6 +12,7 @@ namespace Utilities
 
         protected async void Start()
         {
+            PrimeTween.PrimeTweenConfig.warnEndValueEqualsCurrent = false;
             PoolableEffect.InitializePool();
             SceneManager.activeSceneChanged += (s1, s2) =>
             {

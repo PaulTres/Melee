@@ -258,37 +258,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &157586703
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 157586704}
-  m_Layer: 0
-  m_Name: StabReference
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &157586704
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157586703}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1187523279}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &267695118 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4430704793837717770, guid: ab10404c5b0f319478644edd9dd94601, type: 3}
@@ -384,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 481717647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.4, z: 0.2}
+  m_LocalPosition: {x: 0.4, y: -0.5, z: -0.3}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -791,37 +760,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bccad41224e80a49b1bd2bf40e9e55f, type: 3}
---- !u!1 &1183199043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1183199044}
-  m_Layer: 0
-  m_Name: WindupReference
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1183199044
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1183199043}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.4, y: -0.2, z: -0.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1187523279}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1187523278
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,10 +791,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1374302680}
-  - {fileID: 2146441173}
   - {fileID: 481717648}
-  - {fileID: 157586704}
-  - {fileID: 1183199044}
   m_Father: {fileID: 1012930113}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1187523280
@@ -883,6 +818,75 @@ MonoBehaviour:
     m_HintWeight: 1
     m_MaintainTargetPositionOffset: 0
     m_MaintainTargetRotationOffset: 0
+--- !u!1 &1247533786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1247533787}
+  - component: {fileID: 1247533789}
+  - component: {fileID: 1247533788}
+  m_Layer: 0
+  m_Name: StabState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1247533787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247533786}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1917663619}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1247533788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247533786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0d5c0885091114486ac8b495fab3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenStabWindupState
+  priority: 0
+  canInterruptSelf: 0
+  stateMachineHolder: {fileID: 1917663619}
+  nextState: {fileID: 1247533789}
+  keyFrames: []
+--- !u!114 &1247533789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247533786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81014f0a26207654b9c086f60889d765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenStabReleaseState
+  priority: 0
+  canInterruptSelf: 0
+  stateMachineHolder: {fileID: 1917663619}
+  nextState: {fileID: 1917663623}
+  meleeWeapon: {fileID: 1917663628}
+  keyFrames: []
+  recoveryDelay: 0.5
 --- !u!1001 &1363599677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1556,7 +1560,12 @@ GameObject:
   - component: {fileID: 1917663621}
   - component: {fileID: 1917663620}
   - component: {fileID: 1917663622}
+  - component: {fileID: 1917663624}
   - component: {fileID: 1917663623}
+  - component: {fileID: 1917663627}
+  - component: {fileID: 1917663626}
+  - component: {fileID: 1917663625}
+  - component: {fileID: 1917663628}
   m_Layer: 0
   m_Name: Arm
   m_TagString: Untagged
@@ -1579,6 +1588,7 @@ Transform:
   m_Children:
   - {fileID: 13585769}
   - {fileID: 1012930113}
+  - {fileID: 1247533787}
   m_Father: {fileID: 342075859}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1917663620
@@ -1607,7 +1617,7 @@ Animator:
   m_GameObject: {fileID: 1917663618}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7607d2b87d0a93f4196f2253fc4eaa6e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 27ebbd9745f83d64c98e6327bb3f6bec, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1650,178 +1660,181 @@ MonoBehaviour:
   m_GameObject: {fileID: 1917663618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d24bbab84617c6a41b920c67c144afe6, type: 3}
+  m_Script: {fileID: 11500000, guid: e88dd5e6746863d44ac7df45e8cbc89a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Animation.ArmController
-  ikTarget: {fileID: 481717648}
-  idleReference: {fileID: 2146441173}
-  windupReference: {fileID: 1183199044}
-  releaseReference: {fileID: 157586704}
-  toIdleDuration: 0.1
-  windupDuration: 0.5
-  releaseDuration: 0.2
-  recoveryDelay: 0.05
-  recoveryDuration: 0.5
-  toIdlePositionSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0}
-    endValue: {x: 0.3, y: -0.4, z: 0.2}
-    settings:
-      duration: 0.1
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
-  windupPositionSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0}
-    endValue: {x: 0.4, y: -0.2, z: -0.2}
-    settings:
-      duration: 0.5
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
-  releasePositionSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0}
-    endValue: {x: 0, y: 0, z: 0.5}
-    settings:
-      duration: 0.2
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
-  recoveryPositionSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0}
-    endValue: {x: 0.3, y: -0.4, z: 0.2}
-    settings:
-      duration: 0.5
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0.05
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
-  toIdleRotationSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0, w: 0}
-    endValue: {x: -0, y: -0, z: -0, w: 1}
-    settings:
-      duration: 0.1
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
-  windupRotationSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0, w: 0}
-    endValue: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-    settings:
-      duration: 0.5
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
-  releaseRotationSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0, w: 0}
-    endValue: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-    settings:
-      duration: 0.2
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
-  recoveryRotationSettings:
-    startFromCurrent: 1
-    startValue: {x: 0, y: 0, z: 0, w: 0}
-    endValue: {x: -0, y: -0, z: -0, w: 1}
-    settings:
-      duration: 0.5
-      ease: 0
-      customEase:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      cycles: 1
-      cycleMode: 0
-      startDelay: 0.05
-      endDelay: 0
-      useUnscaledTime: 0
-      _useFixedUpdate: 0
-      _updateType: 0
+  m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenIdleState
+  priority: 0
+  canInterruptSelf: 0
+  stateMachineHolder: {fileID: 1917663619}
+  keyFrames:
+  - Transform: {fileID: 481717648}
+    vector3Settings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0}
+      endValue: {x: 0.3, y: -0.4, z: 0.2}
+      settings:
+        duration: 0.5
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
+    applyOnPosition: 1
+    quaternionSettings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0, w: 0}
+      endValue: {x: 0, y: 0, z: 0, w: 1}
+      settings:
+        duration: 1
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
+    applyOnRotation: 1
+--- !u!114 &1917663624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917663618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51aa9968878b35d42aed21f8655a2e0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenStateMachine
+  <DefaultState>k__BackingField: {fileID: 1917663623}
+--- !u!114 &1917663625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917663618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 366c106354944b541a615de3ac05ecae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenFSMTest
+  block: 0
+  toIdle: 0
+  stab: 0
+  stateMachine: {fileID: 1917663624}
+  TweenBlockState: {fileID: 1917663627}
+  stabState: {fileID: 1247533788}
+--- !u!114 &1917663626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917663618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e99666226ab0c347b541c7f6abc1ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.BlockComponent
+  parryStaminaModifier: 0.1
+  parryWindow: 0.5
+  blockAngle: 0
+  blockStaminaCost: 0.1
+  blockStaminaInitialCost: 0.2
+  blocking: 0
+--- !u!114 &1917663627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917663618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bda4fc5f6f96e340a67c1bd41b45ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenBlockState
+  priority: 0
+  canInterruptSelf: 0
+  stateMachineHolder: {fileID: 1917663619}
+  keyFrames:
+  - Transform: {fileID: 481717648}
+    vector3Settings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0}
+      endValue: {x: 0, y: 0, z: 0.4}
+      settings:
+        duration: 1
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
+    applyOnPosition: 1
+    quaternionSettings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0, w: 0}
+      endValue: {x: 0, y: 0, z: 0.5, w: 0.8660254}
+      settings:
+        duration: 1
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
+    applyOnRotation: 1
+  blockComponent: {fileID: 1917663626}
+--- !u!114 &1917663628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917663618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 266f51764341bf64cba07e200367cdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Weapons.BasicMeleeWeapon
+  attackType: 0
+  damage: 0
+  triggerParent: {fileID: 979975063}
+  <BlockAngle>k__BackingField: 60
 --- !u!4 &1951488226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2487080402743855851, guid: ab10404c5b0f319478644edd9dd94601, type: 3}
@@ -1857,37 +1870,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 648452793}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2146441172
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2146441173}
-  m_Layer: 0
-  m_Name: IdleReference
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2146441173
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146441172}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3, y: -0.4, z: 0.2}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1187523279}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

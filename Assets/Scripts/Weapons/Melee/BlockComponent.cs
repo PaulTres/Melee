@@ -19,7 +19,7 @@ namespace Weapons
                 return staminaComponent;
             }
         }
-        protected bool blocking;
+        [SerializeField] protected bool blocking;
         protected float blockStartTime;
         public bool Blocking => blocking;
 

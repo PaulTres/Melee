@@ -1,3 +1,4 @@
+using PrimeTween;
 using System;
 using UnityEngine;
 
@@ -6,14 +7,14 @@ namespace Animation.Tweening
     public abstract class TweenState : ImprovedMonoBehaviour, IState
     {
         [SerializeField] protected int priority;
-        public int Priority => priority;
+        public virtual int Priority => priority;
         [SerializeField] protected bool canInterruptSelf;
         public bool CanInterruptSelf => canInterruptSelf;
         public event Action OnEnter = delegate { }, OnExit = delegate { };
         [SerializeField] protected Transform stateMachineHolder;
         protected ITweenStateMachine stateMachine;
-        [Tooltip("If true, the state machine will return to the default state when this state exits. Uses ChangeToDefault() method.")]
-        [SerializeField] protected bool returnToDefaultOnExit = true;
+
+        public abstract Sequence BuildSequence();
 
         protected virtual void OnValidate()
         {
@@ -49,14 +50,21 @@ namespace Animation.Tweening
             {
                 throw new NullReferenceException($"TweenStateMachine component not found for {this}.");
             }
-            stateMachine.KillActiveSequence();
+            stateMachine.SetSequence(BuildSequence());
             OnEnter?.Invoke();
         }
 
         public virtual void ExitState()
         {
             OnExit?.Invoke();
-            if (returnToDefaultOnExit) stateMachine.ChangeToDefault();
+        }
+
+        /// <summary>
+        /// Attempts to set current state machine state to this. Returns the result.
+        /// </summary>
+        public bool ChangeToThis(bool force = false)
+        {
+            return stateMachine.ChangeState(this, force);
         }
 
         public void UpdateState(float _)

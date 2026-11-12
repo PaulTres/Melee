@@ -1,8 +1,6 @@
 using Animation;
+using Animation.Tweening;
 using AudioSystem;
-using DG.Tweening;
-using DG.Tweening.Core;
-using DG.Tweening.Plugins.Options;
 using Effects;
 using EventBus;
 using HybridBT2;
@@ -13,15 +11,23 @@ namespace Utilities
 {
     public static class Extensions
     {
-        public static TweenerCore<Vector3, Vector3, VectorOptions> DOMoveInTargetLocalSpace(this Transform transform, Transform target, Vector3 targetLocalEndPosition, float duration)
+        /// <summary>
+        /// Adds a TweenKeyFrame to a PrimeTween Sequence using sequence.Group(). If the key frame has Vector3Settings, it will add a LocalPosition tween. If it has QuaternionSettings, it will add a LocalRotation tween.
+        /// </summary>
+        /// <param name="sequence"></param>
+        /// <param name="keyFrame"></param>
+        /// <returns></returns>
+        public static PrimeTween.Sequence GroupKeyFrame(this PrimeTween.Sequence sequence, TweenKeyFrame keyFrame)
         {
-            var t = DOTween.To(
-                () => transform.position - target.transform.position, // Value getter
-                x => transform.position = x + target.transform.position, // Value setter
-                targetLocalEndPosition,
-                duration);
-            t.SetTarget(transform);
-            return t;
+            if (keyFrame.Vector3Settings != null)
+            {
+                sequence = sequence.Group(PrimeTween.Tween.LocalPosition(keyFrame.Transform, keyFrame.Vector3Settings.Value));
+            }
+            if (keyFrame.QuaternionSettings != null)
+            {
+                sequence = sequence.Group(PrimeTween.Tween.LocalRotation(keyFrame.Transform, keyFrame.QuaternionSettings.Value));
+            }
+            return sequence;
         }
 
         #region Animator

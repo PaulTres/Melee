@@ -1,0 +1,20 @@
+using PrimeTween;
+using System.Collections.Generic;
+using UnityEngine;
+using Utilities;
+namespace Animation.Tweening
+{
+    public class TweenStabWindupState : TweenChainState
+    {
+        [SerializeField] protected List<TweenKeyFrame> keyFrames = new();
+        public override Sequence BuildSequence()
+        {
+            var sequence = base.BuildSequence();
+            foreach (var keyFrame in keyFrames)
+            {
+                sequence = sequence.GroupKeyFrame(keyFrame);
+            }
+            return sequence;
+        }
+    }
+}

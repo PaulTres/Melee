@@ -6,9 +6,7 @@ namespace Animation.Tweening
     {
         TweenState CurrentState { get; }
         TweenState DefaultState { get; }
-        void ChangeToDefault(bool force = true);
-        bool ChangeState(TweenState newState);
-        void ForceChangeState(TweenState newState);
+        bool ChangeState(TweenState newState, bool force = false);
         void KillActiveSequence();
         void SetSequence(Sequence sequence);
     }
