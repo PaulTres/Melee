@@ -288,7 +288,7 @@ Transform:
   m_GameObject: {fileID: 342075856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.65, z: 0}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -866,8 +866,52 @@ MonoBehaviour:
   priority: 0
   canInterruptSelf: 0
   stateMachineHolder: {fileID: 1917663619}
+  debugColor: {r: 1, g: 0.025280815, b: 0.015686274, a: 1}
   nextState: {fileID: 1247533789}
-  keyFrames: []
+  keyFrames:
+  - Transform: {fileID: 481717648}
+    applyOnPosition: 1
+    vector3Settings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0}
+      endValue: {x: 0.4, y: -0.3, z: -0.2}
+      settings:
+        duration: 0.5
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
+    applyOnRotation: 1
+    quaternionSettings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0, w: 0}
+      endValue: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+      settings:
+        duration: 0.5
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
 --- !u!114 &1247533789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -880,12 +924,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81014f0a26207654b9c086f60889d765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenStabReleaseState
-  priority: 0
+  priority: 5
   canInterruptSelf: 0
   stateMachineHolder: {fileID: 1917663619}
+  debugColor: {r: 0.15911977, g: 1, b: 0.015686274, a: 1}
   nextState: {fileID: 1917663623}
   meleeWeapon: {fileID: 1917663628}
-  keyFrames: []
+  keyFrames:
+  - Transform: {fileID: 481717648}
+    applyOnPosition: 1
+    vector3Settings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0}
+      endValue: {x: 0, y: 0, z: 0.5}
+      settings:
+        duration: 1
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
+    applyOnRotation: 1
+    quaternionSettings:
+      startFromCurrent: 1
+      startValue: {x: 0, y: 0, z: 0, w: 0}
+      endValue: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+      settings:
+        duration: 1
+        ease: 0
+        customEase:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        cycles: 1
+        cycleMode: 0
+        startDelay: 0
+        endDelay: 0
+        useUnscaledTime: 0
+        _useFixedUpdate: 0
+        _updateType: 0
   recoveryDelay: 0.5
 --- !u!1001 &1363599677
 PrefabInstance:
@@ -1582,7 +1670,7 @@ Transform:
   m_GameObject: {fileID: 1917663618}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1666,8 +1754,10 @@ MonoBehaviour:
   priority: 0
   canInterruptSelf: 0
   stateMachineHolder: {fileID: 1917663619}
+  debugColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   keyFrames:
   - Transform: {fileID: 481717648}
+    applyOnPosition: 1
     vector3Settings:
       startFromCurrent: 1
       startValue: {x: 0, y: 0, z: 0}
@@ -1688,7 +1778,7 @@ MonoBehaviour:
         useUnscaledTime: 0
         _useFixedUpdate: 0
         _updateType: 0
-    applyOnPosition: 1
+    applyOnRotation: 1
     quaternionSettings:
       startFromCurrent: 1
       startValue: {x: 0, y: 0, z: 0, w: 0}
@@ -1709,7 +1799,6 @@ MonoBehaviour:
         useUnscaledTime: 0
         _useFixedUpdate: 0
         _updateType: 0
-    applyOnRotation: 1
 --- !u!114 &1917663624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,6 +1812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Animation.Tweening.TweenStateMachine
   <DefaultState>k__BackingField: {fileID: 1917663623}
+  <CurrentState>k__BackingField: {fileID: 0}
 --- !u!114 &1917663625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1774,8 +1864,10 @@ MonoBehaviour:
   priority: 0
   canInterruptSelf: 0
   stateMachineHolder: {fileID: 1917663619}
+  debugColor: {r: 0.20361884, g: 0.015686274, b: 1, a: 1}
   keyFrames:
   - Transform: {fileID: 481717648}
+    applyOnPosition: 1
     vector3Settings:
       startFromCurrent: 1
       startValue: {x: 0, y: 0, z: 0}
@@ -1796,7 +1888,7 @@ MonoBehaviour:
         useUnscaledTime: 0
         _useFixedUpdate: 0
         _updateType: 0
-    applyOnPosition: 1
+    applyOnRotation: 1
     quaternionSettings:
       startFromCurrent: 1
       startValue: {x: 0, y: 0, z: 0, w: 0}
@@ -1817,7 +1909,6 @@ MonoBehaviour:
         useUnscaledTime: 0
         _useFixedUpdate: 0
         _updateType: 0
-    applyOnRotation: 1
   blockComponent: {fileID: 1917663626}
 --- !u!114 &1917663628
 MonoBehaviour:
@@ -1833,7 +1924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Weapons.BasicMeleeWeapon
   attackType: 0
   damage: 0
-  triggerParent: {fileID: 979975063}
+  triggerParent: {fileID: 1816200561}
   <BlockAngle>k__BackingField: 60
 --- !u!4 &1951488226 stripped
 Transform:

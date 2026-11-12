@@ -9,6 +9,11 @@ namespace Animation.Tweening
         [SerializeField] protected List<TweenKeyFrame> keyFrames = new();
         [SerializeField] protected float recoveryDelay = 0.5f;
 
+        protected void OnDrawGizmosSelected()
+        {
+            keyFrames.DrawGizmos(Transform, debugColor);
+        }
+
         public override Sequence BuildSequence()
         {
             var sequence = base.BuildSequence();
@@ -17,7 +22,7 @@ namespace Animation.Tweening
                 sequence = sequence.GroupKeyFrame(keyFrame);
             }
             sequence = sequence.ChainCallback(DisableDamage);
-            if(recoveryDelay > 0f)
+            if (recoveryDelay > 0f)
             {
                 sequence = sequence.ChainDelay(recoveryDelay);
             }

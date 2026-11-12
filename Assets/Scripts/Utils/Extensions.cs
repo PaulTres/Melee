@@ -12,6 +12,20 @@ namespace Utilities
     public static class Extensions
     {
         /// <summary>
+        /// Draws gizmos for a list of TweenKeyFrames. If the list is empty, it does nothing. Otherwise, it iterates through each key frame and calls its DrawGizmos method with the specified color.
+        /// </summary>
+        /// <param name="keyFrames"></param>
+        /// <param name="color"></param>
+        public static void DrawGizmos(this List<TweenKeyFrame> keyFrames, Transform transform, Color color)
+        {
+            if (keyFrames.IsEmpty()) return;
+            foreach (var keyFrame in keyFrames)
+            {
+                keyFrame?.DrawGizmos(transform, color);
+            }
+        }
+
+        /// <summary>
         /// Adds a TweenKeyFrame to a PrimeTween Sequence using sequence.Group(). If the key frame has Vector3Settings, it will add a LocalPosition tween. If it has QuaternionSettings, it will add a LocalRotation tween.
         /// </summary>
         /// <param name="sequence"></param>

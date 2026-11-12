@@ -9,6 +9,11 @@ namespace Animation.Tweening
     {
         [SerializeField] protected List<TweenKeyFrame> keyFrames = new();
 
+        protected void OnDrawGizmosSelected()
+        {
+            keyFrames.DrawGizmos(Transform, debugColor);
+        }
+
         public override Sequence BuildSequence()
         {
             var sequence = Sequence.Create();

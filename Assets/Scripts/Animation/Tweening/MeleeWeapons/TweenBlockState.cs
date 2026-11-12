@@ -32,5 +32,10 @@ namespace Animation.Tweening
             blockComponent.StopBlocking();
             base.ExitState();
         }
+
+        protected void OnDrawGizmosSelected()
+        {
+            keyFrames.DrawGizmos(Transform, debugColor);
+        }
     }
 }

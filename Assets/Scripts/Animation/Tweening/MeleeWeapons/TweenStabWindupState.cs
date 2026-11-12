@@ -7,6 +7,12 @@ namespace Animation.Tweening
     public class TweenStabWindupState : TweenChainState
     {
         [SerializeField] protected List<TweenKeyFrame> keyFrames = new();
+
+        protected void OnDrawGizmosSelected()
+        {
+            keyFrames.DrawGizmos(Transform, debugColor);
+        }
+
         public override Sequence BuildSequence()
         {
             var sequence = base.BuildSequence();

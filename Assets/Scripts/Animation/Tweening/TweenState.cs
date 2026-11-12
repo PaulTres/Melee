@@ -13,6 +13,7 @@ namespace Animation.Tweening
         public event Action OnEnter = delegate { }, OnExit = delegate { };
         [SerializeField] protected Transform stateMachineHolder;
         protected ITweenStateMachine stateMachine;
+        [SerializeField] protected Color debugColor = Color.yellow;
 
         public abstract Sequence BuildSequence();
 
